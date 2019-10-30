@@ -21,54 +21,11 @@ var scrollDiv = document.getElementById('scroll');
 var base = document.getElementById("base");
 
 // var getZ = window.getComputedStyle(scaler, null).getPropertyValue('transform');
-// console.log(getZ);
+// var props2 = $('#scale').css('transform');
+// console.log(getZ); transform値を取得しようとしたもののうまくいかなかったコード達です
 
 var getZ = window.getComputedStyle(scaler, null);
 console.log(getZ);
-
-
-// var props2 = $('##scale').css('transform');
- 
-// function transform3d_value(e){
-//   var values = e.split('(')[1];
-//   values = values.split(')')[0];
-//   values = values.split(', ');
-//   var matrix = {
-//     'scale-x':values[0],
-//     'rotate-z-p':values[1],
-//     'rotate-y-p':values[2],
-//     'perspective1':values[3],
-//     'rotate-z-m':values[4],
-//     'scale-y':values[5],
-//     'rotate-x-p':values[6],
-//     'perspective2':values[7],
-//     'rotate-y-m':values[8],
-//     'rotate-x-m':values[9],
-//     'scale-z':values[10],
-//     'perspective3':values[11],
-//     'translate-x':values[12],
-//     'translate-y':values[13],
-//     'translate-z':values[14],
-//     'perspective4':values[15]
-//   };
-//   return matrix;
-// }
-// console.log(transform3d_value(props2));
-
-// let re_mat3d = /^matrix3d\((.*)\)$/, m = matrix3d.match(re_mat3d)
-// ;
-// if( m ) {
-//   // m を行列（Array）に矯正
-//   m = m[1].split(/,\s*/).map( n => Number(n) )
-//   console.log( m ) // 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3.88, 1
-// }
-
-// getZ.transform[226]でトランスフォーム
-
-// transform: "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3.88, 1)"
-
-
-// transform: "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 2.54, 1)"
 
 // セクション要素のdata-z属性を取得し、transformを設定
 // 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
