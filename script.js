@@ -26,6 +26,24 @@ var base = document.getElementById("base");
 
 var getZ = window.getComputedStyle(scaler, null);
 console.log(getZ);
+// getZ.transform[226]でトランスフォーム
+
+//色々試したもののうまくいかなかったコードを一応置いてます↓
+
+// var getZ = window.getComputedStyle(scaler, null).getPropertyValue('transform');
+// console.log(getZ);
+
+// var props2 = $('#scale').css('transform');
+// console.log(transform3d_value(props2));
+
+// let re_mat3d = /^matrix3d\((.*)\)$/, m = matrix3d.match(re_mat3d)
+// ;
+// if( m ) {
+//   // m を行列（Array）に矯正
+//   m = m[1].split(/,\s*/).map( n => Number(n) )
+//   console.log( m ) // 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3.88, 1
+// }
+
 
 // セクション要素のdata-z属性を取得し、transformを設定
 // 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
