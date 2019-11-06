@@ -25,45 +25,6 @@ var base = document.getElementById("base");
 
 
 
-function matrix3dToArray(matrix3d){
-  var re = /matrix3d\((.*)\)/;
-
-  if(matrix3d.match(re)) {
-    var vals = matrix3d.match(re)[1].replace(/ /g, "").split(",");
-  } else {
-    return 0
-  }
-
-  vals = vals.map(Number)
-
-  var matrix = [new Array(4),new Array(4),new Array(4),new Array(4)];
-
-  matrix[0][0] = vals[0]; 
-  matrix[0][1] = vals[1]; 
-  matrix[0][2] = vals[2]; 
-  matrix[0][3] = vals[3]; 
-  matrix[1][0] = vals[4]; 
-  matrix[1][1] = vals[5]; 
-  matrix[1][2] = vals[6]; 
-  matrix[1][3] = vals[7]; 
-  matrix[2][0] = vals[8]; 
-  matrix[2][1] = vals[9]; 
-  matrix[2][2] = vals[10]; 
-  matrix[2][3] = vals[11]; 
-  matrix[3][0] = vals[12]; 
-  matrix[3][1] = vals[13]; 
-  matrix[3][2] = vals[14]; 
-  matrix[3][3] = vals[15];
-
-  // return matrix; 
-  return matrix[3][2];
-
-}
-
-matrix3dToArray($('#scaler').css('transform')) // スクロールイベントで、matrix3dToArrayの呼び出し
-
-
-
 // セクション要素のdata-z属性を取得し、transformを設定
 // 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
 for(var i = 0; sections.length > i; i++) {
@@ -130,7 +91,7 @@ var Zscroll=matrix3dToArray($('#scaler').css('transform'));
 
 console.log(Zscroll);
 
-  if(Zscroll === 2){
+  if(Zscroll >= 2 && Zscroll <= 3){
 
     var section02x = $('.section-2').getAttribute('data-x')
 
