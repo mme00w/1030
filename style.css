@@ -157,27 +157,27 @@ img{
 
 .section-1 {
   /* background: url(img/01.jpg) no-repeat center; */
-  perspective-origin: 10% 60%;
+  /* perspective-origin: 90% 20%; */
 }
 .section-2 {
   /* background: url(img/02.jpg) no-repeat center; */
-  perspective-origin: 10% 60%;
+  /* perspective-origin: 62% 39%; */
 
 }
 .section-3 {
   /* background: url(img/03.jpg) no-repeat center; */
-  perspective-origin: 10% 60%;
+  /* perspective-origin: 40% 39%; */
 
 }
 .section-4 {
   /* background: url(img/04.jpg) no-repeat center; */
-  perspective-origin: 10% 60%;
+  /* perspective-origin: 40% 39%; */
 
   
 }
 .section-5 {
   /* background: url(img/05.jpg) no-repeat center; */
-  perspective-origin: 10% 60%;
+  /* perspective-origin: 10% 60%; */
 
  
 }
