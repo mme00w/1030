@@ -93,9 +93,9 @@ console.log(Zscroll);
 
   if(Zscroll >= 2 && Zscroll <= 3){ //Z値が２以上３以下の場合
 
-    var section02x = $('.section-2').getAttribute('data-x') //section-2のdata-xを取得
+    var section02x = $('.section-2').getAttribute('data-x'); //section-2のdata-xを取得
 
-    var section02y = $('.section-2').getAttribute('data-y') //section-2のdata-yを取得
+    var section02y = $('.section-2').getAttribute('data-y'); //section-2のdata-yを取得
     
     base.style.perspectiveOrigin = section02x + '% ' + section02y + '%'; 
     //baseのスタイルにperspective-originを、値にsection02xとsection02yを代入
