@@ -107,39 +107,46 @@ a:focus {
 /* ========================================
     ????css
 ========================================= */
-.frame-wrapper{
-  width: 960px;
+
+
+.frame{
+  text-align: center;
+  position: fixed;
+  width: 1000px;
   height: 700px;
+  background: url(img/frame.png)no-repeat center center;
+  background-size: contain;
 }
 
-.frame-wrapper iframe{
-  width: 100%;
-  height: 100%;
-}
+
 
 #base {
-  width: 960px;
-  height: 700px;
+  display: inline-block;
+  width: 753px;
+  height: 522px;
   margin: auto;
-  border: 2px solid #000;
+  /* border: 2px solid #000; */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   perspective: 1px;
   overflow: hidden;
+  /* padding:100px; */
+
+
+
 }
 #scaler {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transform: translateZ(0);
+  transform: translateZ(1px);
 }
 .section {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 30px;
   /* background: #f00; */
   transform: perspective(1px);
   position: absolute;
