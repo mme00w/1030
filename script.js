@@ -29,6 +29,7 @@ var base = document.getElementById("base");
 // 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
 for(var i = 0; sections.length > i; i++) {
   var itemZ = sections[i].getAttribute('data-z');
+  
   // var itemX = sections[i].getAttribute('data-x');
   // var itemY = sections[i].getAttribute('data-y');
   sections[i].style.transform = 'translateZ(' + - itemZ + 'px)';
@@ -37,9 +38,6 @@ for(var i = 0; sections.length > i; i++) {
     scrollDiv.style.height = itemZ + window.innerHeight + 'px';
     
   }
-
-
-
 
 }
 
@@ -89,17 +87,62 @@ matrix3dToArray($('#scaler').css('transform')) // スクロールイベントで
 
 var Zscroll=matrix3dToArray($('#scaler').css('transform'));
 
-console.log(Zscroll);
+// if(Zscroll >= 0 && Zscroll < 2){ //Z値が２以上３未満の場合
 
-  if(Zscroll >= 2 && Zscroll <= 3){ //Z値が２以上３以下の場合
+//   var section01x = $('.section-1').data('x'); //section-2のdata-xを取得
 
-    var section02x = $('.section-2').getAttribute('data-x'); //section-2のdata-xを取得
+//   var section01y = $('.section-1').data('y'); //section-2のdata-yを取得
 
-    var section02y = $('.section-2').getAttribute('data-y'); //section-2のdata-yを取得
-    
-    base.style.perspectiveOrigin = section02x + '% ' + section02y + '%'; 
-    //baseのスタイルにperspective-originを、値にsection02xとsection02yを代入
+//   var perspectiveOrigin = section01x + '% ' + section01y + '%';
 
+//   $('#base').css('perspective-origin', perspectiveOrigin)
+//   console.log(base.style.perspectiveOrigin)
+//   //baseのスタイルにperspective-originを、値にsection02xとsection02yを代入
+// }
+
+switch( Zscroll ) {
+  case Zscroll<1:
+      var sectionX = $('.section-1').data('x'); //section-2のdata-xを取得
+
+      var sectionY = $('.section-1').data('y'); //section-2のdata-yを取得
+
+      var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
+
+  $('#base').css('perspective-origin', perspectiveOrigin);
+    break;
+ 
+ 
+  case Zscroll<2:
+      var sectionX = $('.section-2').data('x'); //section-2のdata-xを取得
+
+      var sectionY = $('.section-2').data('y'); //section-2のdata-yを取得
+
+      var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
+
+  $('#base').css('perspective-origin', perspectiveOrigin);
+    break;
+ 
+ 
+  case Zscroll<3:
+      var sectionX = $('.section-3').data('x'); //section-2のdata-xを取得
+
+      var sectionY = $('.section-3').data('y'); //section-2のdata-yを取得
+
+      var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
+
+  $('#base').css('perspective-origin', perspectiveOrigin);
+    break;
+ 
+ 
+  case Zscroll<4:
+      var sectionX = $('.section-4').data('x'); //section-2のdata-xを取得
+
+      var sectionY = $('.section-4').data('y'); //section-2のdata-yを取得
+
+      var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
+
+  $('#base').css('perspective-origin', perspectiveOrigin);
+    break;
 }
 
 });
