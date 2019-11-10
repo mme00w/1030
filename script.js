@@ -8,9 +8,13 @@ var scrollElm = (function() {
   }
   return document.documentElement;
 
-
-
 })();
+
+$(document).ready(function(){
+  hsize= $(window).height();
+  $('.frame').css('height', hsize + 'px');
+});
+
 
 // 全てのセクション要素を取得
 var sections = document.querySelectorAll('.section');

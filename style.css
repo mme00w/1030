@@ -34,9 +34,9 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  width: 1000px;
-  height: 500px;
+html,body {
+  width: 100%;
+  /* height: 100vh; */
   margin: 0 auto;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -107,25 +107,29 @@ a:focus {
 /* ========================================
     ????css
 ========================================= */
+/* .wrapper{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+} */
 
 
 .frame{
   text-align: center;
   position: fixed;
-  width: 1000px;
-  height: 700px;
+  width: 100%;
+  height: 100vh;
   background: url(img/frame.png)no-repeat center center;
   background-size: contain;
 }
 
 
-
 #base {
   display: inline-block;
-  width: 753px;
-  height: 522px;
+  width: calc(100% - 41.5vw);
+  height: calc(100vh - 25vh);
   margin: auto;
-  /* border: 2px solid #000; */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -134,24 +138,23 @@ a:focus {
   overflow: hidden;
   /* padding:100px; */
 
-
-
 }
 #scaler {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transform-style: preserve-3d;
   transform: translateZ(1px);
 }
 .section {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
-  /* background: #f00; */
   transform: perspective(1px);
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
+
 }
 
 img{
@@ -163,29 +166,3 @@ img{
   z-index: -1;
 }
 
-.section-1 {
-  /* background: url(img/01.jpg) no-repeat center; */
-  /* perspective-origin: 90% 20%; */
-}
-.section-2 {
-  /* background: url(img/02.jpg) no-repeat center; */
-  /* perspective-origin: 62% 39%; */
-
-}
-.section-3 {
-  /* background: url(img/03.jpg) no-repeat center; */
-  /* perspective-origin: 40% 39%; */
-
-}
-.section-4 {
-  /* background: url(img/04.jpg) no-repeat center; */
-  /* perspective-origin: 40% 39%; */
-
-  
-}
-.section-5 {
-  /* background: url(img/05.jpg) no-repeat center; */
-  /* perspective-origin: 10% 60%; */
-
- 
-}
