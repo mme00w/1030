@@ -127,8 +127,8 @@ a:focus {
 
 #base {
   display: inline-block;
-  width: calc(100% - 41.5vw);
-  height: calc(100vh - 25vh);
+  width: calc(100% - 45.5vw);
+  height: calc(100vh - 25.5vh);
   margin: auto;
   position: fixed;
   top: 50%;
