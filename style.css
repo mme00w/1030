@@ -107,18 +107,23 @@ a:focus {
 /* ========================================
     ????css
 ========================================= */
+
 .wrapper{
-  display: table;
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
   width: 930px;
   height: 698px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 
 .frame{
-  display: table-cell;
-  vertical-align: middle;
-  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 930px;
   height: 698px;
   background: url(img/frame.png)no-repeat center center;
@@ -127,14 +132,8 @@ a:focus {
 
 
 #base {
-  display: inline-block;
   width: 750px;
   height: 520px;
-  /* margin: auto; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   perspective: 1px;
   overflow: hidden;
   /* padding:100px; */
