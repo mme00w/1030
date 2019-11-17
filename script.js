@@ -8,6 +8,8 @@ var scrollElm = (function() {
   }
   return document.documentElement;
 
+
+
 })();
 
 // 全てのセクション要素を取得
@@ -20,6 +22,21 @@ var scaler = document.getElementById('scaler');
 var scrollDiv = document.getElementById('scroll');
 
 var base = document.getElementById("base");
+
+
+
+// セクション要素のdata-z属性を取得し、transformを設定
+// 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
+for(var i = 0; sections.length > i; i++) {
+  var itemZ = sections[i].getAttribute('data-z');
+  
+  sections[i].style.transform = 'translateZ(' + - itemZ + 'px)';
+  if(i === sections.length -1) {
+    scrollDiv.style.height = itemZ + window.innerHeight + 'px';
+    
+  }
+
+}
 
 
 // スクロールイベントで、#scaler要素のtransformでz軸を動かす
@@ -65,93 +82,42 @@ matrix3dToArray($('#scaler').css('transform')) // スクロールイベントで
 
 var Zscroll=matrix3dToArray($('#scaler').css('transform'));
 
-
-});
-
-// セクション要素のdata-z属性を取得し、transformを設定
-// 最後のセクション要素のdata-zを元に、画面の高さを計算して設定
-for(var i = 0; sections.length > i; i++) {
-  var itemZ = sections[i].getAttribute('data-z');
-  sections[i].style.transform = 'translateZ(' + - itemZ + 'px)';
-  if(i === sections.length -1) {
-    scrollDiv.style.height = itemZ + window.innerHeight + 'px';
-    
+function sectionZ (section){
+  var sectionX = section.data('x');
+  var sectionY = section.data('y');
+  var perspectiveOrigin = sectionX + '%' + sectionY + '%';
+  $('#base').css('perspective-origin', perspectiveOrigin)
+  console.log(base.style.perspectiveOrigin)
   }
 
+
+
+if(Zscroll >= 0 && Zscroll < 1){ //Z値が２以上３未満の場合
+  sectionZ ($('.section-1')); 
 }
 
-  if (Zscroll === itemZ){  　　//Zscroll値が、itemZ(.sectionのdata-z)と同じ数値になった時
-  var sectionX = sections[i].data('x'); //現.sectionのdata-xを取得
-  var sectionY = sections[i].data('y'); //現.sectionのdata-yを取得
+if(Zscroll >= 0 && Zscroll < 2){ //Z値が２以上３以下の場合
+  sectionZ ($('.section-2')); 
+}
 
-  var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
+if(Zscroll >= 2 && Zscroll < 2.9){ //Z値が２以上３以下の場合
+  sectionZ ($('.section-3')); 
+}
 
-  $('#base').css('perspective-origin', perspectiveOrigin);
-  console.log(base.style.perspectiveOrigin)
-  //baseのスタイルにperspective-originを、値にsectionXとsectionYを代入
+if(Zscroll >= 2.9 && Zscroll < 3.8){ //Z値が２以上３以下の場合
+  sectionZ ($('.section-4')); 
+}
 
+if(Zscroll >= 3.8 && Zscroll < 4.7){ //Z値が２以上３以下の場合
+  sectionZ ($('.section-5')); 
+}
+
+if(Zscroll >= 4.7 && Zscroll < 5.6){ //Z値が２以上３以下の場合
+  sectionZ ($('.section-6')); 
 }
 
 
-
-// if(Zscroll >= 0 && Zscroll < 1){ //Z値が２以上３未満の場合
-
-//   var section01x = $('.section-1').data('x'); //section-2のdata-xを取得
-
-//   var section01y = $('.section-1').data('y'); //section-2のdata-yを取得
-
-//   var perspectiveOrigin = section01x + '% ' + section01y + '%';
-
-//   $('#base').css('perspective-origin', perspectiveOrigin)
-//   console.log(base.style.perspectiveOrigin)
-//   //baseのスタイルにperspective-originを、値にsection02xとsection02yを代入
-// }
-
-
-// switch( Zscroll ) {
-//   case Zscroll<1:
-//       var sectionX = $('.section-1').data('x'); //section-2のdata-xを取得
-
-//       var sectionY = $('.section-1').data('y'); //section-2のdata-yを取得
-
-//       var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
-
-//   $('#base').css('perspective-origin', perspectiveOrigin);
-//     break;
- 
- 
-//   case Zscroll<1.9:
-//       var sectionX = $('.section-2').data('x'); //section-2のdata-xを取得
-
-//       var sectionY = $('.section-2').data('y'); //section-2のdata-yを取得
-
-//       var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
-
-//   $('#base').css('perspective-origin', perspectiveOrigin);
-//     break;
- 
- 
-//   case Zscroll<2.8:
-//       var sectionX = $('.section-3').data('x'); //section-2のdata-xを取得
-
-//       var sectionY = $('.section-3').data('y'); //section-2のdata-yを取得
-
-//       var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
-
-//   $('#base').css('perspective-origin', perspectiveOrigin);
-//     break;
- 
- 
-//   case Zscroll<4:
-//       var sectionX = $('.section-4').data('x'); //section-2のdata-xを取得
-
-//       var sectionY = $('.section-4').data('y'); //section-2のdata-yを取得
-
-//       var perspectiveOrigin = sectionX + '% ' + sectionY + '%';
-
-//   $('#base').css('perspective-origin', perspectiveOrigin);
-//     break;
-// }
+});
 
 
 
